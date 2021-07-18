@@ -2,11 +2,9 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 
 class Radio extends React.Component {
-
   chooseColor(e) {
     console.log(e.target.value);
   }
-
 
   render() {
     return (

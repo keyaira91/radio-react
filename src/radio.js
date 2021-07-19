@@ -4,24 +4,29 @@ class Radio extends React.Component {
     constructor(props) {
         super(props)
         this.state = {
-            color: ""
+            color: "red",
+            color: "green",
+            color: "blue",
+            color: "orange",
+            color: "purple"
         };
         this.onColorChoice = this.onColorChoice.bind(this);
         this.colorSumbit = this.colorSumbit.bind(this);
     }
 
-
+  colorDisplay = () => {
+      this.setState({color: "" });
+  }
 
   onColorChoice(event) {
       this.setState({
          selectedColor: event.target.value});
-      
   }
 
   colorSumbit(event) {
    event.preventDefault();
    console.log(this.state.selectedColor)
-    
+   
 }
 
     
@@ -56,7 +61,7 @@ class Radio extends React.Component {
                             checked={this.state.selectedColor === "purple"}
                             onChange={this.onColorChoice}/>
                             <label>Purple</label><br/>
-                            
+                            <p>{this.state.color}</p>
                             <button onClick={this.colorSumbit} className="btn btn-sm btn-outline-secondary mt-3 mb-3">Choose Color</button>
                         </form>
                 </div>

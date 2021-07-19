@@ -20,7 +20,7 @@ class Radio extends React.Component {
 
   colorSumbit(event) {
    event.preventDefault();
-   console.log(this.state.selectedColor)   
+   console.log(this.state.selectedColor);
 }
 
     render() {
@@ -55,7 +55,7 @@ class Radio extends React.Component {
                             onChange={this.onColorChoice}/>
                             <label>Purple</label><br/>
 
-                            <p id="hidden">You've chosen the color </p>
+                            <p id="" >You've chosen the color {this.selectedColor}</p>
 
                             <button onClick={this.colorSumbit} className="btn btn-sm btn-outline-secondary mt-3 mb-3">Choose Color</button>
                         </form>

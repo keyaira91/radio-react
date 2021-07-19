@@ -1,22 +1,17 @@
-import React from 'react';
+import React from 'react'
+import "./radio.css"
 
 class Radio extends React.Component {
     constructor(props) {
         super(props)
         this.state = {
-            color: "red",
-            color: "green",
-            color: "blue",
-            color: "orange",
-            color: "purple"
+            color: ""
         };
+
         this.onColorChoice = this.onColorChoice.bind(this);
         this.colorSumbit = this.colorSumbit.bind(this);
     }
 
-  colorDisplay = () => {
-      this.setState({color: "" });
-  }
 
   onColorChoice(event) {
       this.setState({
@@ -25,11 +20,9 @@ class Radio extends React.Component {
 
   colorSumbit(event) {
    event.preventDefault();
-   console.log(this.state.selectedColor)
-   
+   console.log(this.state.selectedColor)   
 }
 
-    
     render() {
         return (
         <div className="container mt-5">
@@ -61,7 +54,9 @@ class Radio extends React.Component {
                             checked={this.state.selectedColor === "purple"}
                             onChange={this.onColorChoice}/>
                             <label>Purple</label><br/>
-                            <p>{this.state.color}</p>
+
+                            <p id="hidden">You've chosen the color </p>
+
                             <button onClick={this.colorSumbit} className="btn btn-sm btn-outline-secondary mt-3 mb-3">Choose Color</button>
                         </form>
                 </div>
